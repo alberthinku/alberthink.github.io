@@ -1,15 +1,55 @@
-this is albert's test site at github!
+<html>
 
-24052019 Partly Cloudy
+<head>
+    <script src="./libraries/RGraph.common.core.js"></script>
+    <script src="./libraries/RGraph.line.js"></script>
+    <script src="./libraries/webblue-phaseOne.js"></script>
 
-it is another week passed since Huawei has been banned by US government. currently Google, ARM, Microsoft have been
-cutting their supports to Huawei, and lots of operators in UK, Japan, Taiwan have been announcing their termination of
-5G phone resale process with Huawei.
-Trump just tweeted his willingness to include Huawei to the US-China trade nego, what a business!
-to the next month G20 summit, still have few weeks to go. all the efforts Huawei as a private/employee owned company so
-far has been doing well -- no panic, well balanced, very dedicated to his target, and kept faith to his partners and
-stakeholders.
 
-right now, MRS May just resigned from No.10. so where the Brexit will go?
+</head>
 
-let do our homework careless what political staff trying to do. do the job.
+<body>
+    <!-- <canvas id="cvs" width="600" height="250">[No canvas support]</canvas> <br /> -->
+    <!-- <script src="../micro-bit-WebBluetooth-UART/libraries/webblue.js"></script> -->
+    <h1>Web Bluetooth try</h1>
+    <h2>Status</h2>
+    <table border="1">
+        <tr>
+            <td>
+                <b>Connected</b>
+            </td>
+            <td>
+                <b>Services Discovery Completed</b>
+            </td>
+            <td>
+                <b>Notifications</b>
+            </td>
+        </tr>
+        <tr>
+            <td id="status_connected">false</td>
+            <td id="status_discovered">false</td>
+            <td id="status_notifications">false</td>
+        </tr>
+    </table>
+    <h2>Device Discovery and Connection</h2>
+    <button id="btn_scan" onclick="discoverDevicesOrDisconnect()">discoverDevices</button>
+    <hr>
+    <h2>Reading and Writing</h2>
+    <h3>Read Characteristic - Model Number</h3>
+    <button id="btn_read" onclick="readModelNumber()">Read Model Number</button>
+    <div id="model_number"></div>
+    <h3>Write Characteristic - Randomise Lights</h3>
+    <button id="btn_write" onclick="randomLEDs()">randomise LEDs</button>
+    <hr>
+    <h2>Notifications - Accelerometer <font color="red">X</font>,<font color="green"> Y</font>,<font color="blue"> Z
+        </font>
+    </h2>
+    <canvas id="cvs" width="600" height="250">[No canvas support]</canvas> <br />
+    <script src="./libraries/webblue-phaseTwo.js"></script>
+    <div id="accelerometer_data"></div>
+    <button id="btn_notify" onclick="toggleAccelerometerNotifications()">toggle Notifications</button>
+
+
+</body>
+
+</html>
