@@ -371,7 +371,7 @@ function toggleAccelerometerNotifications() {
                 console.log('accelerometer notification started');
                 setNotificationStatus(true);
                 //when a noticiation for a characteristic is received, an event if fired with the characteristic value attached to it
-                //below is to register a funcction to handle this event
+                //below is to register a function to handle this event
                 accelerometer_data.addEventListener('characteristicvaluechanged', onAccelerometerData);
             })
             .catch(error => {
